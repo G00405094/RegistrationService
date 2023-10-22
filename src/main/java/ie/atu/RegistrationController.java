@@ -11,7 +11,7 @@ import java.util.Map;
 public class RegistrationController {
 
 
-    @PostMapping("/confirm-and-register")
+    @PostMapping("/confirm")
     public String confirmAndRegister(@RequestBody UserDetails userDetails)
     {
         String confirm = String.format("Received details for %s with email %s",
