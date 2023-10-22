@@ -12,11 +12,10 @@ public class RegistrationController {
 
 
     @PostMapping("/confirm-and-register")
-    public Map<String,String> confirmAndRegister(@RequestBody UserDetails userDetails)
+    public String confirmAndRegister(@RequestBody UserDetails userDetails)
     {
-        String confirm = registrationServiceClient.someDetails(userDetails);
-        Map<String, String> responseMessage = new HashMap<>();
-        responseMessage.put("message",confirm);
-        return responseMessage;
+        String confirm = String.format("Received details for %s with email %s",
+                userDetails.getName(), userDetails.getEmail());
+        return confirm;
     }
 }
